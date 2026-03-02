@@ -122,7 +122,7 @@
       font-size: 0.78rem;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: rgba(15,14,12,0.78);
+      color: rgba(0,0,0,0.78);
       text-decoration: none;
       padding: 0.25rem 0.2rem;
       border-bottom: 1px solid transparent;
@@ -162,15 +162,18 @@
 
     .hero-inner { position: relative; z-index: 1; max-width: 760px; }
 
-    .hero-eyebrow {
-      display: inline-block;
-      font-size: 0.72rem;
-      letter-spacing: 0.22em;
+    .hero-eyebrow{
+      display: inline-flex;
+      gap: 0.55rem;
+      align-items: center;
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 1.5rem;
-      opacity: 0;
-      animation: fadeUp 0.8s 0.2s ease forwards;
+      color: rgba(0,0,0,0.75);
+      background: rgba(255,255,255,0.55);
+      border: 1px solid rgba(0,0,0,0.12);
+      padding: 0.45rem 0.75rem;
+      border-radius: 999px;
     }
 
     .hero-eyebrow::before,
@@ -180,15 +183,13 @@
       opacity: 0.5;
     }
 
-    .hero-title {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2.8rem, 7vw, 5.5rem);
-      font-weight: 700;
-      line-height: 1.1;
-      letter-spacing: -0.01em;
-      margin-bottom: 1.5rem;
-      opacity: 0;
-      animation: fadeUp 0.9s 0.35s ease forwards;
+    .hero-title{
+      font-family:'Playfair Display', serif;
+      font-size: clamp(2.6rem, 5vw, 4.2rem);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      color: #000;
+      margin: 0;
     }
 
     .hero-title em {
@@ -219,9 +220,10 @@
       font-family: 'Playfair Display', serif;
       font-size: 1.35rem;
       font-weight: 700;
-      color: var(--dark);
+      color: #000;
       margin: 0.25rem 0 1rem;
       letter-spacing: -0.01em;
+      text-align: center;
     }
     .beehiiv-embed{ border-radius: 12px !important; }
 
@@ -340,12 +342,12 @@
       max-width: 60px;
     }
 
-    .section-title {
+    .section-title{
       font-family: 'Playfair Display', serif;
-      font-size: clamp(1.8rem, 4vw, 2.8rem);
-      font-weight: 600;
-      line-height: 1.2;
-      margin-bottom: 1.5rem;
+      font-size: clamp(1.9rem, 3.2vw, 2.4rem);
+      letter-spacing: -0.015em;
+      margin: 0 0 1rem;
+      color: #000;
     }
 
     /* ── VALUE PROPS ── */
@@ -387,7 +389,7 @@
 
     .prop-desc {
       font-size: 0.85rem;
-      color: rgba(15,14,12,0.55);
+      color: rgba(0,0,0,0.60);
       line-height: 1.65;
     }
 
@@ -467,7 +469,7 @@
       align-items: center;
       gap: 0.75rem;
       font-size: 0.85rem;
-      color: rgba(15,14,12,0.55);
+      color: rgba(0,0,0,0.60);
     }
 
     .credential::before {
@@ -700,7 +702,7 @@
 
     <div class="props-grid">
       <div class="prop-card reveal">
-        <div class="prop-number">17</div>
+        <div class="prop-number">13</div>
         <div class="prop-title">Years of Primary Research</div>
         <div class="prop-desc">Rizzo has been documenting Bitcoin longer than most people have known what it is.</div>
       </div>
