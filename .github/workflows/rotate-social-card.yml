@@ -2,7 +2,7 @@ name: Rotate social card
 
 on:
   schedule:
-    - cron: '0 9 * * 1'
+    - cron: '0 9 * * *'
   workflow_dispatch:
 
 jobs:
@@ -11,11 +11,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Pick this week's image and update index.html
+      - name: Pick today's image and update index.html
         run: |
           IMAGES=("card-finney.png" "card-breaking-news.png" "card-satoshi-statue.png" "card-saylor.png")
-          WEEK=$(date +%V)
-          INDEX=$(( (10#$WEEK) % 4 ))
+          DAY=$(date +%j)
+          INDEX=$(( (10#$DAY) % 4 ))
           NEW_IMAGE="${IMAGES[$INDEX]}"
           NEW_URL="https://bitcoinhistorynewsletter.com/assets/social-cards/${NEW_IMAGE}"
           echo "Rotating to: $NEW_URL"
@@ -27,7 +27,7 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           if ! git diff --quiet index.html; then
             git add index.html
-            git commit -m "Rotate weekly social card"
+            git commit -m "Rotate daily social card"
             git push
           else
             echo "No change needed"
